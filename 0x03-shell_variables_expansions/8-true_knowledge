@@ -1,2 +1,2 @@
 #!/bin/bash
-eco $(( &128 + Â$TRUEKNOWLEDGE ))
+echo $((128+$TRUEKNOWLEDGE))
