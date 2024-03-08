@@ -5,8 +5,8 @@
 # Displays I hate the kill command when receiving a SIGTERM signal
 # Displays Y U no love me?! when receiving a SIGINT signal
 # Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
-sudo touch /var/run/holbertonscript.pid
-sudo bash -c "echo $$ > /var/run/holbertonscript.pid"
+sudo touch /var/run/myscript.pid
+sudo bash -c "echo $$ > /var/run/myscript.pid"
 
 trap interrup1 SIGTERM
 trap interrup2 SIGINT
@@ -15,7 +15,7 @@ trap interrup3 SIGQUIT
 interrup1()
 {
     echo "I hate the kill command"
-    sudo rm /var/run/holbertonscript.pid
+    sudo rm /var/run/myscript.pid
     exit $?
 }
 
@@ -26,7 +26,7 @@ interrup2()
 
 interrup3()
 {
-    sudo rm /var/run/holbertonscript.pid
+    sudo rm /var/run/myscript.pid
     exit $?
 }
 
